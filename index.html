@@ -214,7 +214,13 @@
 	value.addEventListener('keyup',(e)=>{
 		v = value.value.replaceAll(' ', '');
 		value.value = v
-		buatLink(v);
+		buatUrl = buatLink(v);
+
+		if (e.keyCode == 13) {
+			if (v) {
+				window.location=buatUrl;
+			}
+		}
 	});
 
 	function buatLink(v) {
